@@ -1,0 +1,15 @@
+D:\Semester 3\DUODEKA\DUODEKA\bin\Debug\DUODEKA.exe.config
+D:\Semester 3\DUODEKA\DUODEKA\bin\Debug\DUODEKA.exe
+D:\Semester 3\DUODEKA\DUODEKA\bin\Debug\DUODEKA.pdb
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\DUODEKA.csprojAssemblyReference.cache
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\App.g.cs
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\DUODEKA_MarkupCompile.cache
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\DUODEKA_MarkupCompile.lref
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\DUODEKA.g.resources
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\DUODEKA.Properties.Resources.resources
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\DUODEKA.csproj.GenerateResource.cache
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\DUODEKA.csproj.CoreCompileInputs.cache
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\DUODEKA.exe
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\DUODEKA.pdb
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\windows\Window_Main.g.cs
+D:\Semester 3\DUODEKA\DUODEKA\obj\Debug\windows\Window_Main.baml
