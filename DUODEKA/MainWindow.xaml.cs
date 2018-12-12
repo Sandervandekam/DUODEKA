@@ -20,9 +20,17 @@ namespace DUODEKA
     /// </summary>
     public partial class MainWindow : Window
     {
+        database.MeetingContext meetingContext = new database.MeetingContext();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Bt_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime datum = (DateTime)Cal_kalender.SelectedDate;
+            meetingContext.create(new model.objecten.Meeting(logica.DatabaseTools.generateNewMeetingID(), datum));
         }
     }
 }
