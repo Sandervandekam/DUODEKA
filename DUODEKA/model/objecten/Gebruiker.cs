@@ -12,6 +12,12 @@ namespace DUODEKA.model.objecten
         public String Naam { get; private set; }
         public List<Meeting> Meetings { get; private set; }
 
+        public Gebruiker(int id, string naam)
+        {
+            Id = id;
+            Naam = naam;
+        }
+
         public override string ToString()
         {
             return Naam;

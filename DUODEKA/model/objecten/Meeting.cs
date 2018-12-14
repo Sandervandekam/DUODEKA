@@ -21,5 +21,10 @@ namespace DUODEKA.model.objecten
             Datum = datum;
             Gebruikers = new List<Gebruiker>();
         }
+
+        public Meeting(DateTime datum)
+        {
+            Datum = datum;
+        }
     }
 }

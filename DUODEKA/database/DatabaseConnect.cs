@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿            using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,7 +10,7 @@ namespace DUODEKA.database
 {
     public class DatabaseConnect
     {
-        const string ConnectionString = @"Data Source = LAPTOP - VEQDN5L3\SQLEXPRESS;Initial Catalog = DUODEKA; Integrated Security = True";
+        const string ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False; Integrated Security = True";
         public static SqlConnection GetConnection() {
             return new SqlConnection(ConnectionString);
         }

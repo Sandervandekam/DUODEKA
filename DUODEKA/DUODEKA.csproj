@@ -80,7 +80,7 @@
     <Compile Include="database\DatabaseConnect.cs" />
     <Compile Include="database\GebruikerContext.cs" />
     <Compile Include="database\MeetingContext.cs" />
-    <Compile Include="logica\DatabaseTools.cs" />
+    <Compile Include="logica\MeetingPlanner.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
