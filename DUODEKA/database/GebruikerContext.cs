@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace DUODEKA.database
 {
+    //  Summaries vullen
+    //  Methoden afmaken
     public class GebruikerContext
     {
         public void create(Gebruiker gebruiker)

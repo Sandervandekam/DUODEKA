@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DUODEKA.database
 {       
+    //  Summaries vullen
     public class MeetingContext
     {
         #region methods
