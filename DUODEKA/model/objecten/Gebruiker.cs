@@ -22,5 +22,10 @@ namespace DUODEKA.model.objecten
         {
             return Naam;
         }
+
+        public Gebruiker(int meetingID)
+        {
+            MeetingID = meetingID;
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace DUODEKA.database
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Meeting read(int id) {
+        public Meeting Read(int id) {
             Meeting output = null;
             try
             {
@@ -95,8 +95,8 @@ namespace DUODEKA.database
             List<Meeting> output = new List<Meeting>();
             try
             {
-                using (SqlConnection conn = DatabaseConnect.GetConnection())
-                {
+            using (SqlConnection conn = DatabaseConnect.GetConnection())
+            {
                     conn.Open();
 
                     string query = "select * from Meeting where Datum = @Datum";
@@ -104,6 +104,7 @@ namespace DUODEKA.database
                     SqlCommand command = new SqlCommand(query, conn);
 
                     SqlParameter[] parameters = {
+                        
                         new SqlParameter("@Datum", date)
                     };
 
@@ -119,12 +120,13 @@ namespace DUODEKA.database
                         {
                             while (reader.Read())
                             {
-                                output.Add(new Meeting(Convert.ToInt32(reader["MeetingID"]), Convert.ToDateTime(reader["Datum"])));
+                               output.Add(new Meeting(Convert.ToInt32(reader["MeetingID"]), Convert.ToDateTime(reader["Datum"])));
                             }
                         }
+                        
                     }
 
-                    conn.Close();
+                conn.Close();
                 }
             }
             catch (Exception ex)

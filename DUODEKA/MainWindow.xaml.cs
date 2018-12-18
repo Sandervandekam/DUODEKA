@@ -58,7 +58,7 @@ namespace DUODEKA
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               MessageBox.Show(ex.Message);
             }
         }
 
@@ -74,6 +74,11 @@ namespace DUODEKA
             Gebruiker[] gebruikers = gebruikerContext.readByMeetingID(geselecteerdeMeeting.Id);
             LbIngeplandePersonen.Items.Clear();
             LbIngeplandePersonen.Items.Add(gebruikers);
+        }
+
+        private void Bt_ToonGebruikers_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

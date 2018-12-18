@@ -15,6 +15,11 @@ namespace DUODEKA.model.objecten
 
         #endregion
 
+        public Meeting()
+        {
+
+        }
+
         public Meeting(int id, DateTime datum)
         {
             Id = id;
@@ -26,5 +31,6 @@ namespace DUODEKA.model.objecten
         {
             Datum = datum;
         }
+     
     }
 }

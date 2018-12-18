@@ -46,12 +46,13 @@ namespace DUODEKA.database
                 {
                     using (SqlConnection conn = DatabaseConnect.GetConnection())
                     {
-                        string query = "Select PersoonID, Naam from Persoon where PersoonID = @PersoonID";
+                        string query = "Select PersoonID, MeetingID from Persoon where PersoonID = @PersoonID";
 
                         SqlCommand command = new SqlCommand(query, conn);
 
                         SqlParameter[] parameters = {
-                        new SqlParameter("@PersoonID", id)
+                        new SqlParameter("@PersoonID", id),
+                        new SqlParameter("@MeetingID", id)
 
                     };
 
@@ -64,7 +65,7 @@ namespace DUODEKA.database
                             {
                                 while (reader.Read())
                                 {
-                                    output = new Gebruiker(Convert.ToInt32(reader["PersoonID"]), Convert.ToString(reader["Naam"]));
+                                    output = new Gebruiker(Convert.ToInt32(reader["PersoonID"]), Convert.ToInt32(reader["MeetingID"]));
                                 }
                             }
                         }
@@ -82,10 +83,104 @@ namespace DUODEKA.database
 
         internal Gebruiker[] readByMeetingID(int id)
         {
-            throw new NotImplementedException();
-        }
+            List<Gebruiker> output = new List<Gebruiker>();
+            try
+            {
+                using (SqlConnection conn = DatabaseConnect.GetConnection())
+                {
+                    conn.Open();
 
-        public void update(Gebruiker gebruiker) { }
-        public void delete(Gebruiker gebruiker) { } 
+                    string query = "select * from Persoon where MeetingID = @MeetingID";
+
+                    SqlCommand command = new SqlCommand(query, conn);
+
+                    SqlParameter[] parameters = {
+
+                        new SqlParameter("@MeetingID", meeting.id)
+                    };
+
+                    //  Werkt voor ieder aantal parameters
+                    foreach (SqlParameter p in parameters)
+                    {
+                        command.Parameters.Add(p);
+                    }
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                output.Add(new Gebruiker(Convert.ToInt32(reader["PersoonID"]), Convert.ToString(reader["Meeting"])));
+                            }
+                        }
+
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return output;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gebruiker"></param>
+        public void update(Gebruiker gebruiker)
+        {
+            try
+            {
+                using (SqlConnection conn = DatabaseConnect.GetConnection())
+                {
+                    string query = "update Persoon set MeetingID = @MeetingID Where PersoonID = @GebruikerID";
+
+                    SqlCommand command = new SqlCommand(query, conn);
+
+                    SqlParameter[] parameters = {
+                        new SqlParameter("@GebruikerID", gebruiker.Id),
+                        new SqlParameter("@MeetingID", meeting.id)
+                    };
+
+                    //  Werkt voor ieder aantal parameters
+                    command.Parameters.Add(parameters);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            };
+        }
+        public void delete(Gebruiker gebruiker)
+        {
+            try
+            {
+                using (SqlConnection conn = DatabaseConnect.GetConnection())
+                {
+                    string query = "delete Persoon where PersoonID = @GebruikerID";
+
+                    SqlCommand command = new SqlCommand(query, conn);
+
+                    SqlParameter[] parameters = {
+                        new SqlParameter("@Gebruiker", gebruiker.Id)
+                    };
+
+                    //  Werkt voor ieder aantal parameters
+                    command.Parameters.Add(parameters);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            };
+        } 
     }
 }
